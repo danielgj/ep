@@ -1,7 +1,141 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "eventpoints": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/eventpoints",
+      "sourceRoot": "apps/eventpoints/src",
+      "prefix": "ep",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/eventpoints",
+            "index": "apps/eventpoints/src/index.html",
+            "main": "apps/eventpoints/src/main.ts",
+            "polyfills": "apps/eventpoints/src/polyfills.ts",
+            "tsConfig": "apps/eventpoints/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/eventpoints/src/favicon.ico",
+              "apps/eventpoints/src/assets"
+            ],
+            "styles": ["apps/eventpoints/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/eventpoints/src/environments/environment.ts",
+                  "with": "apps/eventpoints/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "eventpoints:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "eventpoints:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "eventpoints:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/eventpoints/tsconfig.app.json",
+              "apps/eventpoints/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/eventpoints/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/eventpoints/jest.config.js",
+            "tsConfig": "apps/eventpoints/tsconfig.spec.json",
+            "setupFile": "apps/eventpoints/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "eventpoints-e2e": {
+      "root": "apps/eventpoints-e2e",
+      "sourceRoot": "apps/eventpoints-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/eventpoints-e2e/cypress.json",
+            "tsConfig": "apps/eventpoints-e2e/tsconfig.e2e.json",
+            "devServerTarget": "eventpoints:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "eventpoints:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/eventpoints-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/eventpoints-e2e/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "eventpoints"
 }
