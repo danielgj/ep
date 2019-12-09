@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ep/ui-kit": ["libs/ui-kit/src/index.ts"],
+      "@ep/services": ["libs/services/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

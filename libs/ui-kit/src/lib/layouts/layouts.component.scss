@@ -1,0 +1,43 @@
+@import '../assets/css/_variables.scss';
+
+.epFullPage {
+  font-family: latoRegular !important;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+.epSideBarContainer {
+  height: 100vh;
+  width: $size-menu-width;
+  background-color: $primary-blue;
+  color: $aquamarine;
+}
+
+.epMainContent {
+  width: calc(100vw - 280px);
+  height: 100vh;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .epFullPage {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .epMainContent {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - $size-menu-height);
+  }
+
+  .epSideBarContainer {
+    width: 100vw;
+    height: $size-menu-height;
+  }
+}
