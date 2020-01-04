@@ -13,7 +13,8 @@ import {
 } from './layouts/layouts.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { NotFoundLayoutComponent } from './layouts/not-found-layout.component';
-import { HomeComponent } from './home/home.component';
+import { MapComponent } from './map/map.component';
+import { DetailComponent } from './detail/detail.component';
 import { HeaderComponent } from './header/header.component';
 import { EventListComponent } from './event-list/event-list.component';
 
@@ -31,7 +32,8 @@ import { ModelsModule } from '@ep/models';
     SideBarContainerComponent,
     MainLayoutComponent,
     NotFoundLayoutComponent,
-    HomeComponent,
+    MapComponent,
+    DetailComponent,
     HeaderComponent,
     EventListComponent,
   ],

@@ -1,6 +1,7 @@
 <div class="eventList">
   <ul>
-    <li *ngFor="let event of events" (click)="selectEvent(event)">
+    <li *ngFor="let event of events" (click)="selectEvent(event)"
+      [className]="event.id === selectedId ? 'selected' : ''">
       <div class="dateArea">
         <h3>{{event.date | eventListDate}}</h3>
         <p>{{event.time}}</p>

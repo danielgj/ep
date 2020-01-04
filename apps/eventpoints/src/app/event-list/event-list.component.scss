@@ -53,6 +53,10 @@
     background: #eee;
     cursor: pointer;
   }
+
+  li.selected {
+    background: lightcoral;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

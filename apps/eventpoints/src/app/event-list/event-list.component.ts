@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '@ep/services';
+import {
+  EventsService,
+  GlobalsService,
+} from '@ep/services';
 import { environment } from '../../environments/environment';
 import { Event } from '@ep/models';
 
@@ -12,9 +15,11 @@ import { Event } from '@ep/models';
 export class EventListComponent implements OnInit {
 
   events: Event[];
+  selectedId: string;
 
   constructor(
     private eventsService: EventsService,
+    private globalsService: GlobalsService,
   ) {
     this.eventsService.setBaseUrl(environment.API_BASE_URL);
   }
@@ -31,7 +36,8 @@ export class EventListComponent implements OnInit {
   }
 
   selectEvent(event: Event) {
-    alert(event.id);
+    this.globalsService.setSelectedEvent(event);
+    this.selectedId = event.id;
   }
 
 }
