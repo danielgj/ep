@@ -4,15 +4,15 @@
   font-family: latoRegular !important;
   display: flex;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
 }
 
 .epSideBarContainer {
   height: 100vh;
-  width: $size-menu-width;
-  background-color: $primary-blue;
-  color: $aquamarine;
+  width: $size-sidebar-width;
 }
 
 .epMainContent {
@@ -33,11 +33,11 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: calc(100vh - $size-menu-height);
+    height: calc(100vh - $size-sidebar-height);
   }
 
   .epSideBarContainer {
     width: 100vw;
-    height: $size-menu-height;
+    height: $size-sidebar-height;
   }
 }

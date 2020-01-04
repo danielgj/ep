@@ -1,0 +1,17 @@
+@import '../../assets/css/_variables.scss';
+
+.header {
+  display: flex;
+  height:  $size-header-height; // Ajustar con valores de header
+  padding: $default-padding;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: red;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header {
+    width: calc(100vw - 22px);
+  }
+}
