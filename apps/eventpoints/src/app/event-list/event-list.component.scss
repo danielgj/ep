@@ -1,12 +1,58 @@
 @import '../../assets/css/_variables.scss';
 
+* {margin: 0; padding: 0;}
+
 .eventList {
   display: flex;
   flex: 1;
   height: 85%;
-  padding: $default-padding;
-  background-color: green;
+  margin: $default-padding;
   overflow-y: scroll;
+
+  ul {
+    list-style-type: none;
+    width: 500px;
+  }
+   
+  h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+   
+  li .dateArea {
+    float: left;
+    width:100px;
+    height: 100px;
+    margin: 0 15px 0 0;
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 1.8em;
+      
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+  }
+   
+  li p {
+    font-size: 0.9em;
+  }
+   
+  li {
+    padding: 10px;
+    overflow: auto;
+  }
+   
+  li:hover {
+    background: #eee;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

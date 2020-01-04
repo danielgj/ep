@@ -25,7 +25,9 @@
               "apps/eventpoints/src/favicon.ico",
               "apps/eventpoints/src/assets"
             ],
-            "styles": ["apps/eventpoints/src/styles.scss"],
+            "styles": [
+              "apps/eventpoints/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +86,10 @@
               "apps/eventpoints/tsconfig.app.json",
               "apps/eventpoints/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/eventpoints/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/eventpoints/**"
+            ]
           }
         },
         "test": {
@@ -118,40 +123,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/eventpoints-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/eventpoints-e2e/**"]
-          }
-        }
-      }
-    },
-    "ui-kit": {
-      "projectType": "library",
-      "root": "libs/ui-kit",
-      "sourceRoot": "libs/ui-kit/src",
-      "prefix": "ep",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
             "tsConfig": [
-              "libs/ui-kit/tsconfig.lib.json",
-              "libs/ui-kit/tsconfig.spec.json"
+              "apps/eventpoints-e2e/tsconfig.e2e.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui-kit/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/eventpoints-e2e/**"
+            ]
           }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui-kit/jest.config.js",
-            "tsConfig": "libs/ui-kit/tsconfig.spec.json",
-            "setupFile": "libs/ui-kit/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
         }
       }
     },
@@ -168,7 +147,10 @@
               "libs/services/tsconfig.lib.json",
               "libs/services/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/services/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/services/**"
+            ]
           }
         },
         "test": {
@@ -199,7 +181,10 @@
               "libs/models/tsconfig.lib.json",
               "libs/models/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/models/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/models/**"
+            ]
           }
         },
         "test": {

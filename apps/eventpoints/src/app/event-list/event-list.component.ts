@@ -30,4 +30,8 @@ export class EventListComponent implements OnInit {
     );
   }
 
+  selectEvent(event: Event) {
+    alert(event.id);
+  }
+
 }

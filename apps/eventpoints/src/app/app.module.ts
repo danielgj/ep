@@ -6,19 +6,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {
+  FullPageComponent,
+  MainContentComponent,
+  SideBarContainerComponent,
+} from './layouts/layouts.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { NotFoundLayoutComponent } from './layouts/not-found-layout.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { EventListComponent } from './event-list/event-list.component';
 
-import { UiKitModule } from '@ep/ui-kit';
+import { EventDatePipe } from './event-list/eventDate.pipe';
+
 import { ServicesModule } from '@ep/services';
 import { ModelsModule } from '@ep/models';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EventDatePipe,
+    FullPageComponent,
+    MainContentComponent,
+    SideBarContainerComponent,
     MainLayoutComponent,
     NotFoundLayoutComponent,
     HomeComponent,
@@ -31,7 +41,6 @@ import { ModelsModule } from '@ep/models';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    UiKitModule,
     ServicesModule,
     ModelsModule,
   ],

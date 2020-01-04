@@ -1,7 +1,12 @@
 <div class="eventList">
   <ul>
-    <li *ngFor="let event of events">
-      {{event.title}}
+    <li *ngFor="let event of events" (click)="selectEvent(event)">
+      <div class="dateArea">
+        <h3>{{event.date | eventListDate}}</h3>
+        <p>{{event.time}}</p>
+      </div>
+      <h3>{{event.title}}</h3>
+      <p>{{event.source.name}}</p>
     </li>
   </ul>
 </div>
