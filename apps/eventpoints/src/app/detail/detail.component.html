@@ -1,1 +1,8 @@
-<h1>Detalle</h1>
+<div class="detailContainer">
+    <p *ngIf="!globalsService.selectedEvent">Seleccione un evento</p>
+    <div class="detail" *ngIf="globalsService.selectedEvent">
+        <h1>{{globalsService.selectedEvent.title}}</h1>
+        <div [innerHtml]="globalsService.selectedEvent.abstract_details"></div>
+
+    </div>
+</div>

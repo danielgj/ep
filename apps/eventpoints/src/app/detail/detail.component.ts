@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GlobalsService } from '@ep/services';
+import { environment } from '../../environments/environment';
+import { Event } from '@ep/models';
 
 @Component({
     selector: 'ep-detail-content',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class DetailComponent {
 
+    constructor(
+        private globalsService: GlobalsService,
+    ) { }
 }
