@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_BASE_URL: 'https://eventpoints-backend.osweekends.com/api/v1',
+  API_BASE_URL: 'http://eventpoints-backend.osweekends.com/api/v2',
 };
 
 /*
